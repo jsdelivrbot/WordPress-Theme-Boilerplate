@@ -1,0 +1,184 @@
+/*
+Theme Name: Esthetique
+Theme URI: https://wordpress.org/themes/esthetique/
+Author: Jan Hamara
+Author URI: https://www.janhamara.com
+Description: Seculin custom WP theme
+Version: 1.0 alpha
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: PEsthetique
+
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+//------------------------------------------------------------------------------
+
+// Variables
+
+// ------------------------------------------------------------------------------
+
+@min: 0%;
+@max: 100%;
+@font: 'Dosis', sans-serif;
+@main-font-color: #222222;
+
+//--------------------------
+// Media Queries
+// -------------------------
+
+@smartphone-all: ~"only screen and (max-width: 479px) and (orientation: portrait)";
+@smartphone-all-landscape: ~"only screen and (max-width: 736px) and (orientation: landscape)";
+
+@smartphone-small: ~"only screen and (max-width: 330px) and (orientation: portrait)";
+@smartphone: ~"only screen and (min-width: 330px) and (max-width: 400px) and (orientation: portrait)";
+@smartphone-medium: ~"only screen and (min-width: 400px) and (max-width: 413px) and (orientation: portrait)";
+@smartphone-big: ~"only screen and (min-width: 413px) and (max-width: 479px) and (orientation: portrait)";
+@tablet-small: ~"only screen and (min-width: 760px) and (max-width: 1024px) and (orientation: portrait)";
+@tablet-big: ~"only screen and (min-width: 1024px) and (max-width: 1366px) and (orientation: portrait)";
+@iPad-landscape: ~"only screen and (width: 1024px) and (height: 768px) and (orientation: landscape)";
+@big-screen: ~"only screen and (min-width: 1900px)";
+
+//------------------------------------------------------------------------------
+
+// Classes
+
+// ------------------------------------------------------------------------------
+
+.nobound {
+  margin: @min;
+  padding: @min;
+}
+
+.fs {
+  width: @max;
+  height: @max;
+}
+
+.display (@value: block) {
+  display: @value;
+}
+
+.position(@position: absolute) {
+  position: @position;
+}
+
+.aligntext (@align: center) {
+  text-align: @align;
+}
+
+/*   Mixin for perfect absolute positioning - centering    */
+.p-center {
+  .position;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.rel {
+  .position(relative);
+}
+
+.abs {
+  .position;
+}
+
+.bg-setup {
+  background-position:  center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  -ms-content-zooming: none;
+}
+
+@-webkit-keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+//------------------------------------------------------------------------------
+
+// Main Setup
+
+// ------------------------------------------------------------------------------
+
+body, html, div, span, p, a, img, header, footer, span, section, nav, aside, article, figure, figcaption, h1, h2, h3, h4, h5, h6, i {
+  .display;
+  .nobound;
+  //outline: red 1px solid;
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
+
+html, body {
+  .fs;
+  background-image: url('./images/bg.jpeg');
+  .bg-setup;
+  color: @main-font-color;
+  font-family: @font;
+  font-size: @max;
+  speak: none;
+  font-style: normal;
+  font-weight: 100;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+//  Bootstrap Edit Config
+.container-fluid, .container, .row, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7,
+.col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+  .nobound;
+}
+
+a {
+
+  &:link, &:visited, &:active {
+    color: @main-font-color !important;
+    text-decoration: none !important;
+  }
+
+  &:active {
+    font-weight: 300 !important;
+  }
+
+  &:hover {
+    text-decoration: none !important;
+    font-weight: 600 !important;
+  }
+}
+
+//------------------------------------------------------------------------------
+
+// Main CSS
+
+// ------------------------------------------------------------------------------
+
+body {
+
+}
